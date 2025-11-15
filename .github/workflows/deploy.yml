@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Release Branch
 
 # Run workflow on every push to the master branch
 on:
@@ -21,13 +21,13 @@ jobs:
 
     # publishes Blazor project to the release-folder
     - name: Publish Blazor Project
-      run: dotnet publish JNMechanical.services.csproj -c Release -o release --nologo
+      run: dotnet publish jnmechanical.services.csproj -c Release -o release --nologo
 
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Go away Jekyll
       run: touch release/wwwroot/.nojekyll
       
-    - name: Commit wwwroot to GitHub Pages
+    - name: Commit wwwroot to Release Branch
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
