@@ -10,17 +10,17 @@
 
 @font-face {
     font-family: 'Helvetica N Roman';
-    src: url('../fonts/HelveticaNeueRoman.ttf') format('truetype');
+    src: url('/fonts/HelveticaNeueRoman.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Helvetica N Medium';
-    src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype');
+    src: url('/fonts/HelveticaNeueMedium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Helvetica N Bold';
-    src: url('../fonts/HelveticaNeueBold.ttf') format('truetype');
+    src: url('/fonts/HelveticaNeueBold.ttf') format('truetype');
 }
 
 * {
