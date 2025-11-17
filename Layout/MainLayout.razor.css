@@ -36,12 +36,22 @@
     color: var(--secondary-color);
 }
 
+.nav-item:not(.hidden):hover .expandable {
+    transition: all 0.7s;
+    width: 100%;
+    opacity: 1;
+}
+
+.expandable {
+    margin: auto;
+    opacity: 0;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    width: 0%;
+    border-bottom: solid 1px var(--alt-color);
+}
+
 .mini-logo {
     height: auto;
     width: 150px;
-}
-
-hr {
-    width: 100%;
-    border-bottom: solid 1px black;
 }

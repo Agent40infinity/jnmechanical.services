@@ -1,0 +1,46 @@
+﻿.banner {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--alt-color);
+    align-content: center;
+}
+
+.info-contents {
+    padding: 40px;
+}
+
+.title {
+    margin-top: 40px;
+    font-family: var(--font-bold);
+    font-size: 45px;
+    color: black;
+}
+
+.sub-title {
+    margin-top: 3px;
+    font-family: var(--font-medium);
+    font-size: 30px;
+    color: var(--alt-color);
+}
+
+.description {
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--main-color);
+    text-align: left;
+}
