@@ -8,17 +8,16 @@ namespace jnmechanical.services.Components
         public static bool visited = false;
 
         public const int duration = 1000;
+        public const int transition = 500;
 
         public static async Task NavigateTo(NavigationManager navManager, IJSRuntime js, string page)
         {
             page = StringCorrection(page);
 
-            var forceRefresh = navManager.ToAbsoluteUri(page).AbsoluteUri == navManager.Uri;
-
-            await js.InvokeVoidAsync("Unloaded", duration);
-            await Task.Delay(duration);
-
-            navManager.NavigateTo(page, forceRefresh);
+            await js.InvokeVoidAsync("FadeOut", transition);
+            await Task.Delay(transition);
+            navManager.NavigateTo(page);
+            await js.InvokeVoidAsync("FadeIn", transition);
         }
 
         private static string StringCorrection(string title)
