@@ -2,6 +2,14 @@
     OnImagesLoaded(duration);
 }
 
+function FadeIn(duration) {
+    $('.body').fadeIn(duration);
+}
+
+function FadeOut(duration) {
+    $('.body').fadeOut(duration);
+}
+
 function Loaded(duration) {
     $('.pre-loader').fadeOut(duration);
 

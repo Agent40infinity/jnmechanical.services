@@ -57,7 +57,10 @@
     width: 150px;
 }
 /* /Pages/Inquiry.razor.rz.scp.css */
-body[b-xlfo1fj4xs] {
+.form-container[b-xlfo1fj4xs] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* /Pages/Main.razor.rz.scp.css */
 .banner[b-4c3x4oz91s] {
@@ -107,5 +110,26 @@ body[b-xlfo1fj4xs] {
     text-align: left;
 }
 /* /Pages/Services.razor.rz.scp.css */
-body[b-oc11ih14og] {
+.service-container[b-oc11ih14og] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 950px;
+    margin: auto;
+}
+
+.service-entry[b-oc11ih14og] {
+    margin: 20px;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+.service-title[b-oc11ih14og] {
+    font-size: 20px;
+}
+
+.service-attribute[b-oc11ih14og] {
+    font-size: 14px;
 }
