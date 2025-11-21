@@ -10,7 +10,7 @@
 .service-entry {
     margin: 20px;
     width: 200px;
-    border: solid 2px black;
+    border: solid 2px var(--text-color);
     border-radius: 20px;
 }
 

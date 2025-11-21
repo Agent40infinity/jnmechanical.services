@@ -28,7 +28,7 @@
     margin-top: 40px;
     font-family: var(--font-bold);
     font-size: 45px;
-    color: black;
+    color: var(--text-color);
 }
 
 .sub-title {
