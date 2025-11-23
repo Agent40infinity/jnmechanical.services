@@ -25,7 +25,7 @@
 @code {
     protected override async Task OnInitializedAsync()
     {
-        var services = await http.GetFromJsonAsync<Dictionary<string, List<string>>>("json/services.json");
+        var services = await http.GetFromJsonAsync<List<Service>>("json/services.json");
 
         if (services != null)
         {

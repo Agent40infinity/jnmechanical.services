@@ -7,8 +7,8 @@
     {
         <a class="service-entry">
             <img class="service-icon" />
-            <p class="service-title">@service.Key</p>
-            @foreach (var point in service.Value)
+            <p class="service-title">@service.title</p>
+            @foreach (var point in service.attributes)
             { 
                 <p class="service-attribute">- @point</p>
             }

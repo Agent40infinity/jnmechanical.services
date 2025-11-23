@@ -2,6 +2,6 @@
 {
     public class Data
     {
-        public static Dictionary<string, List<string>> Services = new Dictionary<string, List<string>>();
+        public static List<Service> Services = [];
     }
 }
