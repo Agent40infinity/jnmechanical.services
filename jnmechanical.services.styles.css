@@ -85,6 +85,14 @@
     width: 30%;
     background-color: var(--alt-color);
     align-content: center;
+
+    opacity: 1;
+    transition: all 1.5s ease;
+
+    @starting-style {
+        opacity: 0;
+        width: 10%;
+    }
 }
 
 .info-contents[b-4c3x4oz91s] {
@@ -110,6 +118,14 @@
     font-size: 30px;
     color: var(--main-color);
     text-align: left;
+    opacity: 1;
+    transition: all 1s ease;
+    transition-delay: 1.25s;
+
+    @starting-style {
+        opacity: 0;
+        translate: 60px 0;
+    }
 }
 /* /Pages/Services.razor.rz.scp.css */
 .service-container[b-oc11ih14og] {
