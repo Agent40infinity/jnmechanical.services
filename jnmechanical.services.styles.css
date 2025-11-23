@@ -65,40 +65,6 @@
     align-items: center;
 }
 /* /Pages/Main.razor.rz.scp.css */
-.banner[b-4c3x4oz91s] {
-    position: relative;
-    height: 250px;
-    width: 100%;
-}
-
-.banner img[b-4c3x4oz91s] {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.banner-info[b-4c3x4oz91s] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 30%;
-    background-color: var(--alt-color);
-    align-content: center;
-
-    opacity: 1;
-    transition: all 1.5s ease;
-
-    @starting-style {
-        opacity: 0;
-        width: 10%;
-    }
-}
-
-.info-contents[b-4c3x4oz91s] {
-    padding: 40px;
-}
-
 .title[b-4c3x4oz91s] {
     margin-top: 40px;
     font-family: var(--font-bold);
@@ -111,21 +77,6 @@
     font-family: var(--font-medium);
     font-size: 30px;
     color: var(--alt-color);
-}
-
-.description[b-4c3x4oz91s] {
-    font-family: var(--font-bold);
-    font-size: 30px;
-    color: var(--main-color);
-    text-align: left;
-    opacity: 1;
-    transition: all 1s ease;
-    transition-delay: 1.25s;
-
-    @starting-style {
-        opacity: 0;
-        translate: 60px 0;
-    }
 }
 /* /Pages/Services.razor.rz.scp.css */
 .service-container[b-oc11ih14og] {
@@ -150,4 +101,52 @@
 
 .service-attribute[b-oc11ih14og] {
     font-size: 14px;
+}
+/* /Shared/Banner.razor.rz.scp.css */
+.banner[b-jb4kcrqd9z] {
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+.banner img[b-jb4kcrqd9z] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-info[b-jb4kcrqd9z] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--alt-color);
+    align-content: center;
+    opacity: 1;
+    transition: all 1.5s ease;
+
+    @starting-style {
+        opacity: 0;
+        width: 10%;
+    }
+}
+
+.info-contents[b-jb4kcrqd9z] {
+    padding: 40px;
+}
+
+.description[b-jb4kcrqd9z] {
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--main-color);
+    text-align: left;
+    opacity: 1;
+    transition: all 1s ease;
+    transition-delay: 1.25s;
+
+    @starting-style {
+        opacity: 0;
+        translate: 60px 0;
+    }
 }
