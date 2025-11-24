@@ -28,6 +28,11 @@
             Navigation.visited = true;
         }
 
+        if (firstRender)
+        {
+            await js.InvokeVoidAsync("FadeIn", Navigation.duration);
+        }
+
         await base.OnAfterRenderAsync(firstRender);
     }
 }

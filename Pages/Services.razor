@@ -1,7 +1,7 @@
 ﻿@page "/services"
 @inject IJSRuntime js
 
-<Banner/>
+<Banner contents="@contents" img="@bannerPath" />
 <div class="service-container">
     @foreach (var service in Data.Services)
     {
@@ -17,6 +17,14 @@
 </div>
 
 @code {
+    public string[] contents =
+    {
+        "Our Services"
+    };
+
+    public string bannerPath = "../img/banner_services.jpg";
+
+
     protected override async Task OnInitializedAsync()
     {
         while (Data.Services.Count == 0)
@@ -33,6 +41,11 @@
             await js.InvokeVoidAsync("Rendered", Navigation.duration);
 
             Navigation.visited = true;
+        }
+
+        if (firstRender)
+        {
+            await js.InvokeVoidAsync("FadeIn", Navigation.duration);
         }
 
         await base.OnAfterRenderAsync(firstRender);

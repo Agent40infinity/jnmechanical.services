@@ -1,9 +1,22 @@
 ﻿<div class="banner">
-    <img src="../img/banner.png" />
+    <img src="@img" />
     <div class="banner-info">
         <div class="info-contents">
-            <p class="description">Trusted & Reliable care operating</p>
-            <p class="description">in The Hills and Greater Sydney.</p>
+            @foreach (var item in contents)
+            {
+                <p class="description">@item</p>
+            }
         </div>
     </div>
 </div>
+
+@code {
+    [Parameter]
+    public string img { get; set; } = "../img/banner.png";
+    [Parameter]
+    public string[] contents { get; set; } =
+    {
+        "Trusted & Reliable care operating",
+        "in The Hills and Greater Sydney."
+    };
+}

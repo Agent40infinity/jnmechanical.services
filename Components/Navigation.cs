@@ -14,10 +14,9 @@ namespace jnmechanical.services.Components
         {
             page = StringCorrection(page);
 
-            await js.InvokeVoidAsync("FadeOut", transition);
-            await Task.Delay(transition);
+            await js.InvokeVoidAsync("FadeOut", duration);
+            await Task.Delay(duration);
             navManager.NavigateTo(page);
-            await js.InvokeVoidAsync("FadeIn", transition);
         }
 
         private static string StringCorrection(string title)

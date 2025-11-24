@@ -2,7 +2,7 @@
 @inject HttpClient http
 @inject IJSRuntime js
 
-<Banner/>
+<Banner contents="@contents" img="@bannerPath" />
 <div class="form-container">
     <div class="form-entry">
         <p class="form-title">First Name</p>
@@ -37,6 +37,13 @@
 </div>
 
 @code {
+    public string[] contents =
+    {
+        "Inquiry",
+    };
+
+    public string bannerPath = "../img/banner_inquiry.png";
+
     public InquiryForm form = new InquiryForm();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -47,6 +54,11 @@
             await js.InvokeVoidAsync("Rendered", Navigation.duration);
 
             Navigation.visited = true;
+        }
+
+        if (firstRender)
+        {
+            await js.InvokeVoidAsync("FadeIn", Navigation.duration);
         }
 
         await base.OnAfterRenderAsync(firstRender);
