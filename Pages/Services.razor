@@ -5,7 +5,7 @@
 <div class="service-container">
     @foreach (var service in Data.Services)
     {
-        <a class="service-entry">
+        <a class="service-entry" @onclick="@(() => selectedService = service)">
             <img class="service-icon" />
             <p class="service-title">@service.title</p>
             @foreach (var point in service.attributes)
@@ -14,6 +14,10 @@
             }
         </a>
     }
+</div>
+@if (selectedService != null)
+<div class="service-details">
+
 </div>
 
 @code {
@@ -24,6 +28,7 @@
 
     public string bannerPath = "../img/banner_services.jpg";
 
+    public Service? selectedService = null;
 
     protected override async Task OnInitializedAsync()
     {
