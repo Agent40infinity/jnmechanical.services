@@ -6,8 +6,9 @@
         public string lastName = "";
         public string email = "";
         public string phone = "";
-        public string inquiry = "";
         public string rego = "";
-        public string model = "";
+        public string state = "";
+        public string subject = "";
+        public string inquiry = "";
     }
 }

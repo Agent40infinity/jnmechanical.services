@@ -35,6 +35,9 @@
     </div>
     <a class="rego-submit">Search</a>
 </div>
+<a @onclick="@(RequestInquirySubmission)">
+    Submit
+</a>
 
 @code {
     public string[] contents =
@@ -62,5 +65,10 @@
         }
 
         await base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected async Task RequestInquirySubmission()
+    {
+        await SMTP.PostInquiry(http, form);
     }
 }
