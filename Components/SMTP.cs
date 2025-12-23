@@ -1,4 +1,6 @@
 ﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text.Json.Serialization;
 
 namespace jnmechanical.services.Components
 {
@@ -12,14 +14,25 @@ namespace jnmechanical.services.Components
                 RequestUri = new Uri("https://inquiry.jnmechanical.services/"),
                 Headers =
                 {
-                    { "full_name_value", form.firstName + " " + form.lastName },
+                    { "accept", "application/json" },
+                    /*{ "full_name_value", form.firstName + " " + form.lastName },
                     { "email_address_value", form.email },
                     { "phone_number_value", form.phone },
                     { "rego_value", form.rego },
                     { "state_value", form.state },
                     { "subject_value", form.subject },
-                    { "inquiry_value", form.inquiry }
+                    { "inquiry_value", form.inquiry }*/
                 },
+                Content = JsonContent.Create(new
+                {
+                    full_name_value = form.firstName + " " + form.lastName,
+                    email_address_value = form.email,
+                    phone_number_value = form.phone,
+                    rego_value = form.rego,
+                    state_value = form.state,
+                    subject_value = form.subject,
+                    inquiry_value = form.inquiry
+                })
             };
 
             using (var response = await client.SendAsync(request))
@@ -29,5 +42,5 @@ namespace jnmechanical.services.Components
                 Console.WriteLine(body);
             }
         }
-    }
+    }   
 }
