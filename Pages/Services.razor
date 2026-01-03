@@ -2,17 +2,16 @@
 @inject IJSRuntime js
 
 <Banner contents="@contents" img="@bannerPath" />
+<p class="sub-title">What we can <span style="color: var(--secondary-color)">offer</span> you.</p>
 <div class="service-flex">
     <div class="service-container">
         @foreach (var service in Data.Services)
         {
             <a class="service-entry" @onclick="@(() => selectedService = selectedService == service ? null : service)">
-                <img class="service-icon" />
-                <p class="service-title">@service.title</p>
-                @foreach (var point in service.attributes)
-                { 
-                    <p class="service-attribute">- @point</p>
-                }
+                <img class="service-icon" src="@("../img/services/" + service.img)"/>
+                <div class="service-title">
+                    <p>@service.title</p>
+                </div>  
             </a>
         }
     </div>
