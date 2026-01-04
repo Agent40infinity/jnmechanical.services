@@ -28,6 +28,7 @@
     font-family: var(--font-regular);
     margin: 0px;
     padding: 0px;
+
 }
 
 html {
@@ -133,12 +134,12 @@ a, .btn-link {
     top: 10%;
 }
 
+code {
+    color: #c02d76;
+}
+
 @media (max-width: 1550px) {
     .logo {
         width: 280px;
     }
-}
-
-code {
-    color: #c02d76;
 }
