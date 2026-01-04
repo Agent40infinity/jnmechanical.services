@@ -1,0 +1,40 @@
+﻿<div class="service-flex">
+    <div class="service-container">
+        @foreach (var service in Data.Services)
+        {
+            <a class="service-entry" @onclick="@(() => selectedService = selectedService == service ? null : service)">
+                <img class="service-icon" src="@("../img/services/" + service.img)" />
+                <div class="service-title">
+                    <p>@service.title</p>
+                </div>
+            </a>
+        }
+    </div>
+    @if (selectedService != null)
+    {
+        <div class="service-details">
+            <div class="service-title">
+                <p>@selectedService.title</p>
+            </div>
+            <p>@selectedService.description</p>
+            <ul>
+                @foreach (var item in selectedService.attributes)
+                {
+                    <li class="service-attribute">@item</li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+
+@code {
+    public Service? selectedService = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        while (Data.Services.Count == 0)
+        {
+            await Task.Delay(10);
+        }
+    }
+}

@@ -10,13 +10,14 @@
             <p class="prompt-title">Inquiry</p>
         </div>
     </a>
-    <a class="nav-item">
-        <div class="prompt-button">
-            <p class="prompt-title">Services</p>
-        </div>
-    </a>
+    <ServiceContainer />
 </div>
-drop
+<div class="reviews-container">
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-98580aac-4ccc-449e-ba27-59a5484a1eae" data-elfsight-app-lazy></div>
+</div>
+<div style="height: 30px;"/>
+
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

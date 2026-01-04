@@ -4,6 +4,7 @@
     {
         public string title { get; set; } = "";
         public string img { get; set; } = "";
+        public string description { get; set; } = "";
         public string[] attributes { get; set; } = [];
     }
 }
