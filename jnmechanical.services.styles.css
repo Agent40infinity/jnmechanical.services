@@ -58,6 +58,40 @@
     top: 45px;
     right: 30px;
 }
+
+.mobile[b-88opp1dswv] {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .contact[b-88opp1dswv] {
+        display: none;
+    }
+}
+
+@media (max-width: 545px) /*Mobile Responsive*/ {
+    .nav-menu[b-88opp1dswv] {
+        justify-content: space-between;
+    }
+
+    .nav-item[b-88opp1dswv] {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 12px;
+        font-family: var(--font-bold)
+    }
+
+    .mobile[b-88opp1dswv] {
+        display: block;
+    }
+
+    .mobile-icon[b-88opp1dswv] {
+        height: 35px;
+        width: auto;
+        margin: auto;
+        padding-bottom: 4px;
+    }
+}
 /* /Pages/Inquiry.razor.rz.scp.css */
 .form-container[b-xlfo1fj4xs] {
     display: flex;
@@ -133,6 +167,54 @@
     @starting-style {
         opacity: 0;
         translate: 60px 0;
+    }
+}
+
+@media (max-width: 1075px) {
+    .banner[b-jb4kcrqd9z] {
+        height: 200px;
+    }
+
+    .banner-info[b-jb4kcrqd9z] {
+        width: 35%;
+    }
+
+    .info-contents[b-jb4kcrqd9z] {
+        padding: 20px;
+    }
+
+    .description[b-jb4kcrqd9z] {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 800px) {
+    .description[b-jb4kcrqd9z] {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .description[b-jb4kcrqd9z] {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 545px) /*Mobile Responsive*/ {
+    .banner[b-jb4kcrqd9z] {
+        height: 150px;
+    }
+
+    .banner-info[b-jb4kcrqd9z] {
+        width: 40%;
+    }
+
+    .info-contents[b-jb4kcrqd9z] {
+        padding: 15px;
+    }
+
+    .description[b-jb4kcrqd9z] {
+        font-size: 14px;
     }
 }
 /* /Shared/ServiceContainer.razor.rz.scp.css */
@@ -211,4 +293,26 @@
 
 .service-attribute[b-hw0e9luk6a] {
     font-size: 14px;
+}
+
+@media (max-width: 1075px) {
+    .service-sub-title[b-hw0e9luk6a] {
+        margin: 0 2.5% 20px 2.5%;
+    }
+}
+
+@media (max-width: 545px) /*Mobile Responsive*/ {
+    .service-entry[b-hw0e9luk6a] {
+        width: 150px;
+    }
+
+    .service-sub-title[b-hw0e9luk6a] {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .service-entry[b-hw0e9luk6a] {
+        width: 147px;
+    }
 }
