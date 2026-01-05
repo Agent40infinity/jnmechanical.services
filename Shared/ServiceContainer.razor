@@ -1,5 +1,6 @@
 ﻿<div class="service-flex">
     <div class="service-container">
+        <p class="service-sub-title">What we can <span style="color: var(--secondary-color)">offer</span> you.</p>
         @foreach (var service in Data.Services)
         {
             <a class="service-entry" @onclick="@(() => selectedService = selectedService == service ? null : service)">

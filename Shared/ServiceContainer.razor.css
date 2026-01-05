@@ -1,4 +1,13 @@
-﻿.service-flex {
+﻿.service-sub-title, .service-sub-title span {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--text-color);
+}
+
+.service-flex {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -10,7 +19,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1060px;
     margin-top: 50px;
 }
 
