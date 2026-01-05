@@ -7,6 +7,8 @@
     --font-regular: 'Helvetica N Roman';
     --font-medium: 'Helvetica N Medium';
     --font-bold: 'Helvetica N Bold';
+    --responsive-view: 1075px;
+    --mobile-view: 545px;
 }
 
 @font-face {

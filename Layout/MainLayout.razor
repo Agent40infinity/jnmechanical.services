@@ -6,13 +6,15 @@
 
 <header class="navbar">
     <div class="nav-menu">
-        <a class="nav-item" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/inquiry"))">
+        <a class="nav-item inquiry" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/inquiry"))">
+            <img class="mobile-icon mobile" src="../img/inquiry_svg.png" />
             <hr class="hidden" />INQUIRY<hr class="expandable" />
         </a>
         <a class="nav-item nav-logo" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/"))">
             <img class="mini-logo" src="../img/logo.png" />
         </a>
-        <a class="nav-item" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/services"))">
+        <a class="nav-item services" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/services"))">
+            <img class="mobile-icon mobile" src="../img/services_svg.png" />
             <hr class="hidden" />SERVICES<hr class="expandable" />
         </a>
     </div>

@@ -74,3 +74,25 @@
 .service-attribute {
     font-size: 14px;
 }
+
+@media (max-width: 1075px) {
+    .service-sub-title {
+        margin: 0 2.5% 20px 2.5%;
+    }
+}
+
+@media (max-width: 545px) /*Mobile Responsive*/ {
+    .service-entry {
+        width: 150px;
+    }
+
+    .service-sub-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .service-entry {
+        width: 147px;
+    }
+}

@@ -57,3 +57,37 @@
     top: 45px;
     right: 30px;
 }
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .contact {
+        display: none;
+    }
+}
+
+@media (max-width: 545px) /*Mobile Responsive*/ {
+    .nav-menu {
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 12px;
+        font-family: var(--font-bold)
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .mobile-icon {
+        height: 35px;
+        width: auto;
+        margin: auto;
+        padding-bottom: 4px;
+    }
+}
