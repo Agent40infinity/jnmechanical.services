@@ -1,12 +1,27 @@
 ﻿@page "/"
 @inject IJSRuntime js
+@inject NavigationManager NavManager
 
 <Banner/>
 <p class="title">JN Mechanical</p>
-<p class="sub-title">Your Expert Mobile & Roadside Mechanic</p>
+<p class="sub-title">Your <span style="color: var(--secondary-color)">Expert</span> Mobile & Roadside Mechanic</p>
 <div class="prompt">
-    <ServiceContainer />
+    <div class="prompt-item">
+        <p class="prompt-title">Inquire a <span style="color: var(--secondary-color); font-family: var(--font-bold); font-size: 34px;">Service</span>.</p>
+        <p class="prompt-details"> Need your car serviced? Have an undiagnosed problem? Emergency Roadside Assistance? Pre-purchase inspections? JN Mechanical has your back! As a mobile mechanic, we come to you for all your needs! Let us know the issue and we'll sort out the rest.</p>
+        <a class="prompt-button" @onclick="@(() => Navigation.NavigateTo(NavManager, js, "/inquiry"))">
+            <p>Contact Us!</p>
+        </a>
+    </div>
+    <div class="prompt-item">
+        <p class="prompt-title">Have a <span style="color: var(--secondary-color); font-family: var(--font-bold); font-size: 34px;">Chat</span>.</p>
+        <p class="prompt-details">Want to talk over the phone? JN Mechanical has got you covered. We deal with servicing, mechanical & engine repairs, wheels & tyres, brakes, suspension and lift kits, radiator & coolant issues, gearbox servicing, fuel systems, and classic car repairs.</p>
+        <a class="prompt-button" href="tel:0452045965">
+            <p>0452 045 965</p>
+        </a>
+    </div>
 </div>
+<ServiceContainer />
 <div class="reviews-container">
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-98580aac-4ccc-449e-ba27-59a5484a1eae" data-elfsight-app-lazy></div>

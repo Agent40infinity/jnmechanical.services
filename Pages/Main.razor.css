@@ -2,14 +2,69 @@
     margin-top: 40px;
     font-family: var(--font-bold);
     font-size: 45px;
+    color: var(--alt-color);
+}
+
+.sub-title, span {
+    margin-top: 3px;
+    margin-bottom: 40px;
+    font-family: var(--font-medium);
+    font-size: 30px;
     color: var(--text-color);
 }
 
-.sub-title {
-    margin-top: 3px;
-    font-family: var(--font-medium);
-    font-size: 30px;
-    color: var(--alt-color);
+.prompt {
+    width: 100%;
+    margin-top: 30px;
+    background-color: var(--banner-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    align-content: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+
+.prompt-item {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+}
+
+.prompt-title {
+    margin-bottom: 15px;
+    font-size: 34px;
+    font-family: var(--font-bold);
+}
+
+.prompt-details {
+    font-size: 16px;
+}
+
+.prompt-button {
+    width: 160px;
+    margin: 30px auto auto auto;
+    padding: 20px 40px 20px 40px;
+    background-color: var(--alt-color);
+    color: var(--banner-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 12px #676767);
+    transition: all 0.5s;
+}
+
+.prompt-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+
+.prompt-button p {
+    font-size: 24px;
+    font-family: var(--font-bold);
 }
 
 .reviews-container {
@@ -17,4 +72,15 @@
     align-content: center;
     justify-content: center;
     margin: 50px 5% 30px 5%;
+}
+
+@media (max-width: 915px) {
+    .prompt {
+        gap: 0px;
+        transition: all 0.5s;
+    }
+
+    .prompt-details {
+        padding: 0 10px 0 10px;
+    }
 }
