@@ -14,9 +14,11 @@ namespace jnmechanical.services.Components
         {
             page = StringCorrection(page);
 
+            var forceRefresh = navManager.ToAbsoluteUri(page).AbsoluteUri == navManager.Uri;
+
             await js.InvokeVoidAsync("FadeOut", duration);
             await Task.Delay(duration);
-            navManager.NavigateTo(page);
+            navManager.NavigateTo(page, forceRefresh);
         }
 
         private static string StringCorrection(string title)
