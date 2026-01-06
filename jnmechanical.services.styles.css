@@ -54,7 +54,7 @@
 .contact[b-88opp1dswv] {
     font-family: var(--font-regular);
     color: var(--alt-color);
-    position: fixed;
+    position: absolute;
     top: 45px;
     right: 30px;
 }
