@@ -8,6 +8,8 @@ namespace jnmechanical.services.Components
     {
         public static async Task PostInquiry(HttpClient client, InquiryForm form)
         {
+            return;
+
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
@@ -39,7 +41,6 @@ namespace jnmechanical.services.Components
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
             }
         }
     }   
