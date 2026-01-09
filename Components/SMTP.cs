@@ -33,7 +33,7 @@ namespace jnmechanical.services.Components
                     subject_value = form.subject,
                     inquiry_value = form.inquiry
                 })
-            };x
+            };
 
             using (var response = await client.SendAsync(request))
             {
