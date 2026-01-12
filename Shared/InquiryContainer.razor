@@ -81,7 +81,7 @@
         }
         else
         {
-            <a class="submit-button" style="background-color: var(--secondary-color)">
+            <a class="submit-button" style="background-color: #6f6f6f">
                 <p>Sending...</p>
             </a>
         }
@@ -109,6 +109,7 @@
 
         posting = true;
         errorMessage = ErrorHandling(await SMTP.PostInquiry(http, form));
+        await Task.Delay(1000);
         posting = false;
     }
 
