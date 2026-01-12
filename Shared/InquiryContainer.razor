@@ -85,10 +85,10 @@
                 <p>Sending...</p>
             </a>
         }
-        @if (!String.IsNullOrEmpty(status))
+        @if (!String.IsNullOrEmpty(errorMessage))
         {
             <p class="error-handling">
-                @status
+                @errorMessage
             </p>
         }
     </div>
@@ -98,7 +98,7 @@
     public InquiryForm form = new InquiryForm();
 
     public bool posting = false;
-    public string status = "";
+    public string errorMessage = "";
 
     protected async Task RequestInquirySubmission()
     {
@@ -108,7 +108,20 @@
         }
 
         posting = true;
-        status = await SMTP.PostInquiry(http, form);
+        errorMessage = ErrorHandling(await SMTP.PostInquiry(http, form));
         posting = false;
+    }
+
+    protected string ErrorHandling(int status)
+    {
+        switch (status)
+        {
+            case 200:
+                return "Email Sent Successfully! Check your Inbox!";
+            case 400:
+                return "Email address was incorrect or missing, please try again!";
+            default:
+                return "Something went wrong on our end, please try again in a moment ^-^";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 
@@ -6,7 +7,7 @@ namespace jnmechanical.services.Components
 {
     public class SMTP
     {
-        public static async Task<string> PostInquiry(HttpClient client, InquiryForm form)
+        public static async Task<int> PostInquiry(HttpClient client, InquiryForm form)
         {
             var request = new HttpRequestMessage
             {
@@ -31,8 +32,9 @@ namespace jnmechanical.services.Components
             using (var response = await client.SendAsync(request))
             {
                 //response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                return body;
+                //var body = await response.Content.ReadAsStringAsync();
+                var status = (int)response.StatusCode;
+                return status;
             }
         }
     }   
