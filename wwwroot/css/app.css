@@ -152,6 +152,18 @@ code {
     border: 2px solid var(--text-color);
 }
 
+.form-area {
+    width: 90%;
+    height: 250px;
+    margin: auto;
+    color: var(--text-color);
+    font-family: var(--font-medium);
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid var(--text-color);
+}
+
 .rego-text {
     position: absolute;
     width: 100%;

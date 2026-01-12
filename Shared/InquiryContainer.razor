@@ -73,11 +73,15 @@
                 </InputSelect>
             </div>
         </div>
-        @if (!posting)
+        <a class="submit-button" style="@(posting ? "background-color: var(--secondary-color)" : "")" @onclick="@(RequestInquirySubmission)">
+            <p>@(posting ? "Sending..." : "Submit")</p>
+        </a>
+
+        @if (!String.IsNullOrEmpty(status))
         {
-            <a class="submit-button" @onclick="@(RequestInquirySubmission)">
-                <p>Submit</p>
-            </a>
+            <p class="error-handling">
+                @status
+            </p>
         }
     </div>
 </div>
@@ -86,6 +90,7 @@
     public InquiryForm form = new InquiryForm();
 
     public bool posting = false;
+    public string status = "";
 
     protected async Task RequestInquirySubmission()
     {
@@ -95,7 +100,7 @@
         }
 
         posting = true;
-        var status = await SMTP.PostInquiry(http, form);
+        status = await SMTP.PostInquiry(http, form);
         posting = false;
     }
 }
