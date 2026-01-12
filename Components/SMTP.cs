@@ -30,7 +30,7 @@ namespace jnmechanical.services.Components
 
             using (var response = await client.SendAsync(request))
             {
-                response.EnsureSuccessStatusCode();
+                //response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
                 return body;
             }

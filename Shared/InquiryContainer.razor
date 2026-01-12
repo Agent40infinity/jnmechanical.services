@@ -73,10 +73,18 @@
                 </InputSelect>
             </div>
         </div>
-        <a class="submit-button" style="@(posting ? "background-color: var(--secondary-color)" : "")" @onclick="@(RequestInquirySubmission)">
-            <p>@(posting ? "Sending..." : "Submit")</p>
-        </a>
-
+        @if (!posting)
+        {
+            <a class="submit-button" @onclick="@(RequestInquirySubmission)">
+                <p>Submit</p>
+            </a>
+        }
+        else
+        {
+            <a class="submit-button" style="background-color: var(--secondary-color)">
+                <p>Sending...</p>
+            </a>
+        }
         @if (!String.IsNullOrEmpty(status))
         {
             <p class="error-handling">
