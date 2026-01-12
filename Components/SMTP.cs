@@ -6,24 +6,15 @@ namespace jnmechanical.services.Components
 {
     public class SMTP
     {
-        public static async Task PostInquiry(HttpClient client, InquiryForm form)
+        public static async Task<string> PostInquiry(HttpClient client, InquiryForm form)
         {
-            return;
-
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
                 RequestUri = new Uri("https://inquiry.jnmechanical.services/"),
                 Headers =
                 {
-                    { "accept", "application/json" },
-                    /*{ "full_name_value", form.firstName + " " + form.lastName },
-                    { "email_address_value", form.email },
-                    { "phone_number_value", form.phone },
-                    { "rego_value", form.rego },
-                    { "state_value", form.state },
-                    { "subject_value", form.subject },
-                    { "inquiry_value", form.inquiry }*/
+                    { "accept", "application/json" }
                 },
                 Content = JsonContent.Create(new
                 {
@@ -41,6 +32,7 @@ namespace jnmechanical.services.Components
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
+                return body;
             }
         }
     }   

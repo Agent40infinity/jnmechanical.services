@@ -1,0 +1,103 @@
+﻿.form-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 1060px;
+}
+
+.inquiry-sub-title, .inquiry-sub-title span {
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--text-color);
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.form-full {
+    width: 100%;
+    margin: 20px;
+}
+.form-half {
+    width: 450px;
+    margin: 20px;
+}
+
+.form-entry {
+    padding: 20px;
+    background-color: var(--banner-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 12px #676767);
+}
+
+.form-title {
+    margin: 0 0 15px 0;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title p {
+    font-family: var(--font-bold);
+    font-size: 24px;
+    color: var(--alt-color);
+}
+
+.rego-section {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form-rego {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rego-container {
+    position: relative;
+    height: 130px;
+    width: 250px;
+}
+
+.rego-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-button {
+    width: 160px;
+    margin: 30px auto 50px auto;
+
+    padding: 20px 40px 20px 40px;
+    background-color: var(--alt-color);
+    color: var(--banner-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 12px #676767);
+    transition: all 0.5s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+
+.submit-button p {
+    font-size: 24px;
+    font-family: var(--font-bold);
+}

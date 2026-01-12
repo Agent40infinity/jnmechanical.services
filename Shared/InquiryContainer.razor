@@ -1,0 +1,101 @@
+﻿@inject HttpClient http
+
+<div class="form-flex">
+    <div class="form-container">
+        <p class="inquiry-sub-title">How can we <span style="color: var(--secondary-color)">help</span>?</p>
+        <div class="form-entry form-half">
+            <div class="form-title">
+                <p>First Name</p>
+            </div>
+            <InputText class="form-input" @bind-Value="form.firstName" autocorrect="off" />
+        </div>
+        <div class="form-entry form-half">
+            <div class="form-title">
+                <p>Last Name</p>
+            </div>
+            <InputText class="form-input" @bind-Value="form.lastName" autocorrect="off" />
+        </div>
+        <div class="form-entry form-half">
+            <div class="form-title">
+                <p>Email</p>
+            </div>
+            <InputText class="form-input" @bind-Value="form.email" />
+        </div>
+        <div class="form-entry form-half">
+            <div class="form-title">
+                <p>Phone</p>
+            </div>
+            <InputText class="form-input" @bind-Value="form.phone" />
+        </div>
+        <div class="form-entry form-full">
+            <div class="form-title">
+                <p>Service</p>
+            </div>
+            <InputSelect class="form-state" @bind-Value="form.subject">
+                @foreach (var service in Data.Services)
+                {
+                    <option value="@service.title">@service.title</option>
+                }
+                <option value="Other">Other</option>
+            </InputSelect>
+        </div>
+        <div class="form-entry form-full">
+            <div class="form-title">
+                <p>Inquiry</p>
+            </div>
+            <InputText class="form-area" @bind-Value="form.inquiry" />
+        </div>
+        <div class="form-entry form-full rego-section">
+            <div class="rego-sect form-half">
+                <div class="form-rego">
+                    <div class="form-title">
+                        <p class="rego-title">Rego</p>
+                    </div>
+                    <div class="rego-container">
+                        <img class="rego-img" src="../img/rego_plate.png" />
+                        <InputText class="rego-text" @bind-Value="form.rego" />
+                    </div>
+                </div>
+            </div>
+            <div class="rego-sect form-half">
+                <div class="form-title">
+                    <p>Service</p>
+                </div>
+                <InputSelect class="form-state" @bind-Value="form.state">
+                    <option value="NSW">New South Wales</option>
+                    <option value="ACT">Australian Capital Territory</option>
+                    <option value="VIC">Victoria</option>
+                    <option value="QLD">Queensland</option>
+                    <option value="SA">South Australia</option>
+                    <option value="NT">Northern Territory</option>
+                    <option value="WA">Western Australia</option>
+                    <option value="TAS">Tasmania</option>
+                </InputSelect>
+            </div>
+        </div>
+        @if (!posting)
+        {
+            <a class="submit-button" @onclick="@(RequestInquirySubmission)">
+                <p>Submit</p>
+            </a>
+        }
+    </div>
+</div>
+
+@code {
+    public InquiryForm form = new InquiryForm();
+
+    public bool posting = false;
+
+    protected async Task RequestInquirySubmission()
+    {
+        if (posting)
+        {
+            return;    
+        }
+
+        posting = true;
+        var status = await SMTP.PostInquiry(http, form);
+        posting = false;
+    }
+}
