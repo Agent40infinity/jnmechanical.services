@@ -93,11 +93,6 @@
     }
 }
 /* /Pages/Inquiry.razor.rz.scp.css */
-.form-container[b-xlfo1fj4xs] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 /* /Pages/Main.razor.rz.scp.css */
 .title[b-4c3x4oz91s] {
     margin-top: 40px;
@@ -282,6 +277,110 @@
     .description[b-jb4kcrqd9z] {
         font-size: 14px;
     }
+}
+/* /Shared/InquiryContainer.razor.rz.scp.css */
+.form-flex[b-pjpusa61fe] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container[b-pjpusa61fe] {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 1060px;
+}
+
+.inquiry-sub-title[b-pjpusa61fe], .inquiry-sub-title span[b-pjpusa61fe] {
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--text-color);
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.form-full[b-pjpusa61fe] {
+    width: 100%;
+    margin: 20px;
+}
+.form-half[b-pjpusa61fe] {
+    width: 450px;
+    margin: 20px;
+}
+
+.form-entry[b-pjpusa61fe] {
+    padding: 20px;
+    background-color: var(--banner-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 12px #676767);
+}
+
+.form-title[b-pjpusa61fe] {
+    margin: 0 0 15px 0;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title p[b-pjpusa61fe] {
+    font-family: var(--font-bold);
+    font-size: 24px;
+    color: var(--alt-color);
+}
+
+.rego-section[b-pjpusa61fe] {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.form-rego[b-pjpusa61fe] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rego-container[b-pjpusa61fe] {
+    position: relative;
+    height: 130px;
+    width: 250px;
+}
+
+.rego-img[b-pjpusa61fe] {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.submit-button[b-pjpusa61fe] {
+    width: 160px;
+    margin: 30px auto 50px auto;
+
+    padding: 20px 40px 20px 40px;
+    background-color: var(--alt-color);
+    color: var(--banner-color);
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 12px #676767);
+    transition: all 0.5s;
+}
+
+.submit-button:hover[b-pjpusa61fe] {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+
+.submit-button p[b-pjpusa61fe] {
+    font-size: 24px;
+    font-family: var(--font-bold);
 }
 /* /Shared/ServiceContainer.razor.rz.scp.css */
 .service-sub-title[b-hw0e9luk6a], .service-sub-title span[b-hw0e9luk6a] {
