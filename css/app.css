@@ -137,7 +137,7 @@ a, .btn-link {
 }
 
 code {
-    color: #c02d76;
+    color: #c02d76; 
 }
 
 .form-input, .form-state {
@@ -149,7 +149,7 @@ code {
     font-size: 20px;
     text-align: center;
     border-radius: 20px;
-    border: 2px solid var(--alt-color);
+    border: 2px solid var(--text-color);
 }
 
 .rego-text {
