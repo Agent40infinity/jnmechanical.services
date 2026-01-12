@@ -382,6 +382,11 @@
     font-size: 24px;
     font-family: var(--font-bold);
 }
+
+.error-handling[b-pjpusa61fe] {
+    font-size: 18px;
+    color: red;
+}
 /* /Shared/ServiceContainer.razor.rz.scp.css */
 .service-sub-title[b-hw0e9luk6a], .service-sub-title span[b-hw0e9luk6a] {
     width: 100%;
