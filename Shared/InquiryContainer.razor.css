@@ -101,3 +101,8 @@
     font-size: 24px;
     font-family: var(--font-bold);
 }
+
+.error-handling {
+    font-size: 18px;
+    color: red;
+}
