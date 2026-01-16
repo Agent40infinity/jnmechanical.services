@@ -377,6 +377,16 @@
     transition: all 0.5s;
 }
 
+.submit-processing[b-pjpusa61fe] {
+    background-color: #6f6f6f;
+    transition: all 0.5s;
+}
+
+.submit-processing:hover[b-pjpusa61fe] {
+    transform: scale(1);
+    background-color: #6f6f6f;
+    transition: all 0.5s;
+}
 
 .submit-button p[b-pjpusa61fe] {
     font-size: 24px;
@@ -384,7 +394,9 @@
 }
 
 .error-handling[b-pjpusa61fe] {
+    margin: 0 10px 50px 10px;
     font-size: 18px;
+    text-wrap: wrap;
     color: red;
 }
 
