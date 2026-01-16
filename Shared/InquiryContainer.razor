@@ -5,33 +5,34 @@
         <p class="inquiry-sub-title">How can we <span style="color: var(--secondary-color)">help</span>?</p>
         <div class="form-entry form-half">
             <div class="form-title">
-                <p>First Name</p>
+                <p>First Name <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-input" @bind-Value="form.firstName" autocorrect="off" />
+            <InputText class="form-input" @bind-Value="form.firstName" autocorrect="off" placeholder="John" />
         </div>
         <div class="form-entry form-half">
             <div class="form-title">
-                <p>Last Name</p>
+                <p>Last Name <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-input" @bind-Value="form.lastName" autocorrect="off" />
+            <InputText class="form-input" @bind-Value="form.lastName" autocorrect="off" placeholder="Smith" />
         </div>
         <div class="form-entry form-half">
             <div class="form-title">
-                <p>Email</p>
+                <p>Email <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-input" @bind-Value="form.email" />
+            <InputText class="form-input" @bind-Value="form.email" placeholder="example.gmail.com" />
         </div>
         <div class="form-entry form-half">
             <div class="form-title">
-                <p>Phone</p>
+                <p>Phone <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-input" @bind-Value="form.phone" />
+            <InputText class="form-input" @bind-Value="form.phone" placeholder="0412 345 678" type="number" maxlength="10" />
         </div>
         <div class="form-entry form-full">
             <div class="form-title">
-                <p>Service</p>
+                <p>Service <span class="error-handling">(Required)</span></p>
             </div>
             <InputSelect class="form-state" @bind-Value="form.subject">
+                <option value="" hidden>Select Related Service</option>
                 @foreach (var service in Data.Services)
                 {
                     <option value="@service.title">@service.title</option>
@@ -41,27 +42,28 @@
         </div>
         <div class="form-entry form-full">
             <div class="form-title">
-                <p>Inquiry</p>
+                <p>Message <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-area" @bind-Value="form.inquiry" />
+            <InputText class="form-area" @bind-Value="form.inquiry" placeholder="Hi JN Mechanical, I need help with...."/>
         </div>
         <div class="form-entry form-full rego-section">
             <div class="rego-sect form-half">
                 <div class="form-rego">
                     <div class="form-title">
-                        <p class="rego-title">Rego</p>
+                        <p class="rego-title">Rego <span class="error-handling">(Required)</span></p>
                     </div>
                     <div class="rego-container">
                         <img class="rego-img" src="../img/rego_plate.png" />
-                        <InputText class="rego-text" @bind-Value="form.rego" />
+                        <InputText class="rego-text" @bind-Value="form.rego" placeholder="ABC123" maxlength="7"/>
                     </div>
                 </div>
             </div>
             <div class="rego-sect form-half">
                 <div class="form-title">
-                    <p>Service</p>
+                    <p>State <span class="error-handling">(Required)</span></p>
                 </div>
-                <InputSelect class="form-state" @bind-Value="form.state">
+                <InputSelect class="form-state" @bind-Value="form.state" placeholder="Select Rego State">
+                    <option value="" hidden>Select Your State</option>
                     <option value="NSW">New South Wales</option>
                     <option value="ACT">Australian Capital Territory</option>
                     <option value="VIC">Victoria</option>
@@ -100,11 +102,32 @@
     public bool posting = false;
     public string errorMessage = "";
 
+    const int regoCharLimit = 7;
+
     protected async Task RequestInquirySubmission()
     {
         if (posting)
         {
             return;    
+        }
+
+        if (String.IsNullOrEmpty(form.firstName) || String.IsNullOrEmpty(form.lastName) || 
+            String.IsNullOrEmpty(form.email) || String.IsNullOrEmpty(form.phone) || String.IsNullOrEmpty(form.inquiry))
+        {
+            errorMessage = ErrorHandling(1);
+            return;
+        }
+
+        if (String.IsNullOrEmpty(form.rego) || form.rego.Length > regoCharLimit)
+        {
+            errorMessage = ErrorHandling(2);
+            return;
+        }
+
+        if (String.IsNullOrEmpty(form.state))
+        {
+            errorMessage = ErrorHandling(3);
+            return;
         }
 
         posting = true;
@@ -117,6 +140,12 @@
     {
         switch (status)
         {
+            case 1:
+                return "Information Incorrect or Missing from Inquiry!";
+            case 2:
+                return "Rego is Missing or Incorrect!";
+            case 3:
+                return "State has not been Selected!";
             case 200:
                 return "Email Sent Successfully! Check your Inbox!";
             case 400:
