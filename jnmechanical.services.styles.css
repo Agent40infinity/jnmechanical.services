@@ -294,14 +294,13 @@
 }
 
 .inquiry-sub-title[b-pjpusa61fe], .inquiry-sub-title span[b-pjpusa61fe] {
-    text-align: left;
-    margin-bottom: 20px;
-    font-family: var(--font-bold);
-    font-size: 30px;
-    color: var(--text-color);
     width: 100%;
     margin-top: 50px;
     margin-bottom: 20px;
+    text-align: left;
+    font-family: var(--font-bold);
+    font-size: 30px;
+    color: var(--text-color);
 }
 
 .form-full[b-pjpusa61fe] {
@@ -338,6 +337,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
 }
 
 .form-rego[b-pjpusa61fe] {
@@ -386,6 +386,39 @@
 .error-handling[b-pjpusa61fe] {
     font-size: 18px;
     color: red;
+}
+
+@media (max-width: 1075px) {
+    .inquiry-sub-title[b-pjpusa61fe] {
+        margin: 50px 2.5% 20px 2.5%;
+    }
+
+    .form-half[b-pjpusa61fe] {
+        width: 40%;
+    }
+}
+
+@media (max-width: 815px) {
+    .inquiry-sub-title[b-pjpusa61fe] {
+        margin: 50px 2.5% 20px 2.5%;
+    }
+
+    .form-half[b-pjpusa61fe] {
+        width: 100%;
+        margin: 20px;
+    }
+}
+
+@media (max-width: 548px) /*Mobile Responsive*/ {
+    .inquiry-sub-title[b-pjpusa61fe] {
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .inquiry-entry[b-pjpusa61fe] {
+        width: 147px;
+    }
 }
 /* /Shared/ServiceContainer.razor.rz.scp.css */
 .service-sub-title[b-hw0e9luk6a], .service-sub-title span[b-hw0e9luk6a] {
