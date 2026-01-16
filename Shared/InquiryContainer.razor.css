@@ -96,6 +96,16 @@
     transition: all 0.5s;
 }
 
+.submit-processing {
+    background-color: #6f6f6f;
+    transition: all 0.5s;
+}
+
+.submit-processing:hover {
+    transform: scale(1);
+    background-color: #6f6f6f;
+    transition: all 0.5s;
+}
 
 .submit-button p {
     font-size: 24px;
@@ -103,7 +113,9 @@
 }
 
 .error-handling {
+    margin: 0 10px 50px 10px;
     font-size: 18px;
+    text-wrap: wrap;
     color: red;
 }
 
