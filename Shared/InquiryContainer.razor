@@ -32,7 +32,7 @@
                 <p>Service <span class="error-handling">(Required)</span></p>
             </div>
             <InputSelect class="form-state" @bind-Value="form.subject">
-                <option value="" hidden>Select Related Service</option>
+                <option value="" disabled>Select Related Service</option>
                 @foreach (var service in Data.Services)
                 {
                     <option value="@service.title">@service.title</option>
@@ -63,7 +63,7 @@
                     <p>State <span class="error-handling">(Required)</span></p>
                 </div>
                 <InputSelect class="form-state" @bind-Value="form.state" placeholder="Select Rego State">
-                    <option value="" hidden>Select Your State</option>
+                    <option value="" disabled>Select Your State</option>
                     <option value="NSW">New South Wales</option>
                     <option value="ACT">Australian Capital Territory</option>
                     <option value="VIC">Victoria</option>
@@ -151,9 +151,9 @@
             case 200:
                 return "Email Sent Successfully! Check your Inbox!";
             case 400:
-                return "Email address was incorrect or missing, please try again!";
+                return "Email address was incorrect or missing, please try again! (Error 400)";
             default:
-                return "Something went wrong on our end, please try again in a moment ^-^";
+                return "Something went wrong on our end, please try again in a moment ^-^ (Error 500)";
         }
     }
 }
