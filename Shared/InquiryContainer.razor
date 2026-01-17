@@ -44,7 +44,7 @@
             <div class="form-title">
                 <p>Message <span class="error-handling">(Required)</span></p>
             </div>
-            <InputText class="form-area" @bind-Value="form.inquiry" placeholder="Hi JN Mechanical, I need help with...."/>
+            <InputTextArea class="form-area" @bind-Value="form.inquiry" placeholder="Hi JN Mechanical, I need help with...."/>
         </div>
         <div class="form-entry form-full rego-section">
             <div class="rego-sect form-half">
@@ -75,6 +75,14 @@
                 </InputSelect>
             </div>
         </div>
+        @if (!String.IsNullOrEmpty(errorMessage))
+        {
+            <div class="form-full">
+                <p class="error-handling">
+                    @errorMessage
+                </p>
+            </div>
+        }
         @if (!posting)
         {
             <a class="submit-button" @onclick="@(RequestInquirySubmission)">
@@ -86,12 +94,6 @@
             <a class="submit-button submit-processing">
                 <p>Sending...</p>
             </a>
-        }
-        @if (!String.IsNullOrEmpty(errorMessage))
-        {
-            <p class="error-handling">
-                @errorMessage
-            </p>
         }
     </div>
 </div>
@@ -141,7 +143,7 @@
         switch (status)
         {
             case 1:
-                return "Information Incorrect or Missing from Inquiry!";
+                return "Incorrect or Missing Information from Inquiry!";
             case 2:
                 return "Rego is Missing or Incorrect!";
             case 3:

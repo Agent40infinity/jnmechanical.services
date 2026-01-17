@@ -144,6 +144,7 @@ code {
     width: 90%;
     height: 50px;
     margin: auto;
+    padding: 10px;
     color: var(--text-color);
     font-family: var(--font-medium);
     font-size: 20px;
@@ -154,8 +155,9 @@ code {
 
 .form-area {
     width: 90%;
-    height: 250px;
+    height: 220px;
     margin: auto;
+    padding: 15px;
     color: var(--text-color);
     font-family: var(--font-medium);
     font-size: 20px;
