@@ -19,6 +19,9 @@ jobs:
       with:
         dotnet-version: '8.x'
 
+    - name: Install .NET WASM Build Tools
+      run: dotnet workload install wasm-tools
+
     # publishes Blazor project to the release-folder
     - name: Publish Blazor Project
       run: dotnet publish jnmechanical.services.csproj -c Release -o release --nologo
